@@ -1,0 +1,45 @@
+<?php
+    // Set to defaults if undefined.
+    if (!isset($config->loginredirect)) {
+        $config->loginredirect = '';
+    }
+    if (!isset($config->logoutredirect)) {
+        $config->logoutredirect = '';
+    }
+
+    $plugin_name = 'auth_loginlogoutredirect';
+?>
+<table cellspacing="0" cellpadding="5" border="0">
+    <tr>
+        <td colspan="3">
+            <h3><?php print_string('loginlogoutredirect_settings', $plugin_name) ?></h3>
+        </td>
+    </tr>
+    <tr>
+      <td align="right">
+        <label for="loginredirect">
+          <?php print_string('loginredirect_label', $plugin_name) ?>
+        </label>
+      </td>
+      <td>
+        <?php echo html_writer::empty_tag('input',
+               array('type' => 'text', 'id' => 'loginredirect', 'name' => 'loginredirect',
+                 'value' => $config->loginredirect)); ?>
+      </td>
+      <td>
+        <?php print_string('loginredirect_desc', $plugin_name) ?>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">
+        <label for="logoutredirect">
+          <?php print_string('logoutredirect_label', $plugin_name) ?>
+        </label>
+      </td>
+      <td>
+        <?php echo html_writer::empty_tag('input',
+               array('type' => 'text', 'id' => 'logoutredirect', 'name' => 'logoutredirect',
+                 'value' => $config->logoutredirect)); ?>
+      </td>
+    </tr>
+</table>
